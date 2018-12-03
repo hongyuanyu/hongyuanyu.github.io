@@ -2,7 +2,7 @@
 title: Welcome to Hongyuan Yu's Blog
 SEOTitle: 俞宏远的博客 | Hongyuan Blog
 header-img: img/homepage.jpg
-email: hongyuan_yu@yeah.net
+email: hongyuan.yu@cripac.ia.ac.cn
 description: "When natural inclination develops into a passionate desire, one advances towards his goal in seven-league boots."
 keyword: "Hongyuan, Blog, ML, CV, PHD"
 url: "http://hongyuan.github.io"          # your host, for absolute URL
@@ -57,16 +57,16 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: hongyuanyu
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4                            #生成的clientID
   clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  repo: hongyuanyu.github.io    #仓库名称
+  owner: hongyuanyu    #github用户名
+  admin: hongyuanyu
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -78,7 +78,7 @@ ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 

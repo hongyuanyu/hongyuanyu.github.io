@@ -68,7 +68,7 @@ ssserver -c /etc/shadowsocks.json -d stop
 #### 客户端配置
 1. PC参考这个wiki，[https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients#windows](https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients#windows)
 大致界面
-![PC客户端界面](https://imgchr.com/i/FMN4j1)
+![PC客户端界面](https://i.postimg.cc/NjhFXVR6/ss-hongyuan.png)
 2. 安卓手机，安装谷歌游戏全家桶。然后下载shadowsocks安卓版本，输入自己服务器的ip和密码端口即可[[https://play.gaoogle.com/store/apps/details?id=com.github.shadowsocks](https://play.gaoogle.com/store/apps/details?id=com.github.shadowsocks)
 ]([https://play.gaoogle.com/store/apps/details?id=com.github.shadowsocks](https://play.gaoogle.com/store/apps/details?id=com.github.shadowsocks)
 )

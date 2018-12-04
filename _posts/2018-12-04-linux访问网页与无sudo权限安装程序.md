@@ -14,10 +14,12 @@ tags:
 
 > 原创笔记
 
-####简介
+##简介
+
 VPN办公时需要提交集群任务，但是在外网无法访问内网比较麻烦。这里可以先通过连上公司的服务器，再在服务器安装linux访问网页的工具即可。lynx是一个基于文本的web浏览器，使用GNU GPLv2协议发布，用ISO C编写。下载地址：[http://lynx.invisible-island.net/release/](http://lynx.invisible-island.net/release/)
 
-####无sudo权限安装方法
+##无sudo权限安装方法
+
 ```
 解压后
 cd package
@@ -25,7 +27,9 @@ cd package
 make
 make install
 ```
-####使用方法
+
+##使用方法
+
 lynx + 网页地址
 
 比如：lynx [https://www.jianshu.com/u/0f0fd65df64a](https://www.jianshu.com/u/0f0fd65df64a)

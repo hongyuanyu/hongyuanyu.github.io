@@ -127,7 +127,7 @@ Person in Context (PIC) 图像关系分割竞赛和workshop
 
 2. 比赛:
 主要是分割出图片中各个任务的关系。
-[![PIC.png](https://i.postimg.cc/yYtksgxK/PIC.png)](https://postimg.cc/D8Q2cz1p)
+![PIC.png](https://i.postimg.cc/yYtksgxK/PIC.png)
 比赛链接: [http://picdataset.com/challenge/task-intro/](http://picdataset.com/challenge/task-intro/)
 
 3. 评价:
@@ -149,8 +149,12 @@ Person in Context (PIC) 图像关系分割竞赛和workshop
 Google开放 Open Images V4 数据库，并基于这一数据集举办 ECCV 2018 公开图像挑战赛，比赛分为两个赛道：对象类别检测，视觉关系检测
 
 2. 比赛:
-[![openimg.png](https://i.postimg.cc/fTw6yB3j/openimg.png)](https://postimg.cc/XXz2DKkp)
+![openimg.png](https://i.postimg.cc/fTw6yB3j/openimg.png)
 比赛链接: [https://storage.googleapis.com/openimages/web/challenge.html](https://storage.googleapis.com/openimages/web/challenge.html)
 
 3. 评价:
 和PIC人与人关系相比，这个多了很多物体的，人和物体的关系。同理可以扩展到视频模式。
+
+#### 补充
+
+还有大热的VOT跟踪以及COCO分割比赛没有放上去。

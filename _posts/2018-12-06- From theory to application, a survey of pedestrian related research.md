@@ -45,7 +45,7 @@ tags:
 
 
 
-### Recent competetion about pedestrian
+### Recent competetion about human
 选取的比赛主要考虑以下几个方面:
 * 比赛的延续性，年年都举办的一般是比较好的。
 * 数据规模和参赛人数，越大越好
@@ -122,7 +122,6 @@ tags:
 ##### Person in Contex (PIC)
 
 1. 简介:
-
 Person in Context (PIC) 图像关系分割竞赛和workshop
 
 2. 比赛:

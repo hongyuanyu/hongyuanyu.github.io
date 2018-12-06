@@ -54,6 +54,7 @@ tags:
 #### CVPR workshop
 
 ##### Visual Understanding of Humans in Crowd Scene and the 2nd Look Into Person (LIP) Challenge
+
 1. 简介:
 在野外情景中开发全面的人类视觉理解解决方案，被视为计算视觉中最基本的问题之一，可能在许多工业应用领域产生至关重要的影响，如自动驾驶，虚拟现实，视频监控，人机交互等。和人类行为分析。例如，人体解析和姿态估计通常被认为是更高级别活动/事件识别和检测的第一步。尽管如此，现实生活中应用所需的内容与基于现代计算机视觉技术可实现的内容之间似乎存在巨大差距。
 
@@ -63,7 +64,10 @@ tags:
 3. 评论:
 图片，视频数据集都有，其他模态的数据集好像没有，比如红外，加入句子理解。
 
+##### ActivityNet Large Scale Activity Recognition Challenge
 
+1. 简介：
+侧重于用户日常生活生成的视频中的识别和高级的目标导向的活动，侧重于互联网上的视频。
 
 
 

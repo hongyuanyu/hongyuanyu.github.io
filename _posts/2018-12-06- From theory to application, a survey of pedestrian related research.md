@@ -81,8 +81,8 @@ tags:
 扩大感受野，类似self-attention。在视频中加过，检测性能不升反降。
 
 ##### [Deep Attentive Tracking via Reciprocative Learning](https://arxiv.org/pdf/1810.03851.pdf) (NIPS 2018)
-[![recipracative.png](https://i.postimg.cc/Y0HwXxnb/recipracative.png)](https://postimg.cc/hzpwvVqd)
 
+[![recipracative.png](https://i.postimg.cc/Y0HwXxnb/recipracative.png)](https://postimg.cc/hzpwvVqd)
 1. 简介: 这是一篇跟踪的文章。对于视觉跟踪，外观剧烈变化时具有较大挑战性。注意力机制有助于解决这个问题，但是传统注意力方法是学习一组预测判别用的参数。该文章是讲注意力机制运用到网络的训练中。本文基于 tracking-by-detection 框架提出一种新颖的 Attention 机制来复制跟踪，实现在跟踪过程中自动 attend target object regions
 
 2. 评论: 还可以这么用注意力机制，很新颖的方法。
@@ -99,21 +99,18 @@ tags:
 
 #### 行为识别
 ##### [Temporal relation reasoning in videos](https://arxiv.org/pdf/1711.08496.pdf)
+
 [![temperal-relation.png](https://i.postimg.cc/R0KKrSCG/temperal-relation.png)](https://postimg.cc/XZNpd0Cy)
 1. 简介:
 视频中的行为识别大部分方法是围绕Two-stream和C3D展开的。
-
 1）Two-stream，即利用视频帧图像（spatial）以及根据帧图像通过无监督提取的光流场图像（Flow）来各自train一个模型，并在网络产生结果之后，对结果做一个后融合。这两个modality分别表示静态信息和短时序信息。在这个思路上有很多杰出的工作，如Fusion-NN，TSN，salient area based, spatial-temporal bilinear pooling, temporal blinear encoding等能取得当时的SOTA。
-
 2）C3D，比之C2D,多了一个时序上的密集采样 卷积，以此弥补Spatial modality上的短时序信息缺乏问题，虽然从整体结果来看，效果并不如two-stream fusion后的结果。
 在这上面的尝试，有 I-3D, ResNet-3D, P-3D, non-local-3D 等等。
-
 上面的方法基本可以很有效的解决从一张图就能识别出行为的类别，比如踢球，你看到运动员在踢球，那这肯定是在踢足球了，再加上光流信息的融合，概率就更高了（我们能知道踢的动作了）。但是这些方法都不能解决长时序问题，或者更具体的说： 如果这个行为是因为前后的时序变化而产生的，那么仅仅看单帧，或者短时序，是不能识别出这个类别的。比如人在叠被子，被子的变化很难通过单帧和短时序被CNN学习，只有看到叠被子前和叠被子后的变化，你才知道他在叠被子。这种情况对于真实场景非常常见， 不是一些小量数据集能反应出来的。
 
-文章做法可以简单的理解成改变了TSN的信息汇总的选举方式，感觉虽然是对temporal relation的一个研究，但结构简单，只限于每帧过完CNN后的feature以及选择MLP的结构做为关系的联接，这个方向还有很大的空间。
-
 2. 评论:
-可以扩展到其他任务中的长时间记忆保持。
+可以扩展到其他任务中的长时间记忆保持。文章做法可以简单的理解成改变了TSN的信息汇总的选举方式，感觉虽然是对temporal relation的一个研究，但结构简单，只限于每帧过完CNN后的feature以及选择MLP的结构做为关系的联接，这个方向还有很大的空间。
+
 
 #### 通用检测
 

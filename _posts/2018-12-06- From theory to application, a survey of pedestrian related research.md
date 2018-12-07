@@ -60,7 +60,7 @@ tags:
 2. 评论:
 其实是可变形卷积的三维扩展。
 
-#####[End-to-End Learning of Motion Representation for Video Understanding](https://arxiv.org/abs/1804.00413) (CVPR 2018)
+##### [End-to-End Learning of Motion Representation for Video Understanding](https://arxiv.org/abs/1804.00413) (CVPR 2018)
 1. 简介:
 尽管端到端学习的表征近来取得了成功，但视频分析任务广泛使用的仍然还是人工设计的光流特征。为了弥补这一不足，我们提出了一种全新的可端到端训练的神经网络 TVNet，可从数据中学习类光流特征。TVNet 是一种特定的光流求解器 TV-L1 方法，并且通过将 TV-L1 中的优化迭代展开成神经层而进行了初始化。因此，TVNet 无需任何额外训练就能直接使用。
 此外，它还可以自然地嫁接到其它特定任务的网络上，从而得到端到端的架构；因此，这种方法无需预计算和在磁盘上预存储特征，比之前的多阶段方法更加高效。最后，TVNet 的参数可以通过端到端训练进一步优化。这让 TVNet 不仅可以学习光流，而且还可以学习到更丰富的且更针对任务的动作模式。我们在两个动作识别基准上进行了广泛的实验，结果表明了我们提出的方法的有效性。我们的 TVNet 实现了比所有同类方法更优的准确度，同时在特征提取时间方面也能与最快的同类方法媲美。
@@ -77,10 +77,15 @@ tags:
 
 1. 简介:
 将non local思想引入视频分类。这篇文章受传统的non-local mean operation启发，核心思想就是：our non-local operation computes the response at a position as a weighted sum of the features at all positions. 简单讲单纯的一层卷积操作其实都是很local的，因此为了达到non local的效果（也就是文中说的获取 long range dependency），一般就是不断叠加这样的特征提取层，这样高层网络的感受野（receptive field）就越来越大，获取的信息分布广度也越来越高。但是这种不断叠加的方式必然会带来计算量的增加和优化难度的增加，因此就有了本文作者提出的non local机制。
-2. 评论
-扩大感受野，类似self-attention
+2. 评论:
+扩大感受野，类似self-attention。在视频中加过，检测性能不升反降。
 
-#####
+##### [Deep Attentive Tracking via Reciprocative Learning](https://arxiv.org/pdf/1810.03851.pdf) (NIPS 2018)
+[![recipracative.png](https://i.postimg.cc/Y0HwXxnb/recipracative.png)](https://postimg.cc/hzpwvVqd)
+
+1. 简介: 这是一篇跟踪的文章。对于视觉跟踪，外观剧烈变化时具有较大挑战性。注意力机制有助于解决这个问题，但是传统注意力方法是学习一组预测判别用的参数。该文章是讲注意力机制运用到网络的训练中。本文基于 tracking-by-detection 框架提出一种新颖的 Attention 机制来复制跟踪，实现在跟踪过程中自动 attend target object regions
+
+2. 评论: 还可以这么用注意力机制，很新颖的方法。
 
 #### 降维
 ##### [Learning Low-Dimensional Temporal Representations](http://proceedings.mlr.press/v80/su18a/su18a.pdf) (ICML 2018)
@@ -90,12 +95,32 @@ tags:
 
 2. 评论: 序列降维方法，相关方法可以关注下。
 
-#### 视频网络结构
-
-#### 基础检测（图像和视频）
-
-
 ### Application
+
+#### 行为识别
+##### [Temporal relation reasoning in videos](https://arxiv.org/pdf/1711.08496.pdf)
+[![temperal-relation.png](https://i.postimg.cc/R0KKrSCG/temperal-relation.png)](https://postimg.cc/XZNpd0Cy)
+1. 简介:
+视频中的行为识别大部分方法是围绕Two-stream和C3D展开的。
+
+1）Two-stream，即利用视频帧图像（spatial）以及根据帧图像通过无监督提取的光流场图像（Flow）来各自train一个模型，并在网络产生结果之后，对结果做一个后融合。这两个modality分别表示静态信息和短时序信息。在这个思路上有很多杰出的工作，如Fusion-NN，TSN，salient area based, spatial-temporal bilinear pooling, temporal blinear encoding等能取得当时的SOTA。
+
+2）C3D，比之C2D,多了一个时序上的密集采样 卷积，以此弥补Spatial modality上的短时序信息缺乏问题，虽然从整体结果来看，效果并不如two-stream fusion后的结果。
+在这上面的尝试，有 I-3D, ResNet-3D, P-3D, non-local-3D 等等。
+
+上面的方法基本可以很有效的解决从一张图就能识别出行为的类别，比如踢球，你看到运动员在踢球，那这肯定是在踢足球了，再加上光流信息的融合，概率就更高了（我们能知道踢的动作了）。但是这些方法都不能解决长时序问题，或者更具体的说： 如果这个行为是因为前后的时序变化而产生的，那么仅仅看单帧，或者短时序，是不能识别出这个类别的。比如人在叠被子，被子的变化很难通过单帧和短时序被CNN学习，只有看到叠被子前和叠被子后的变化，你才知道他在叠被子。这种情况对于真实场景非常常见， 不是一些小量数据集能反应出来的。
+
+文章做法可以简单的理解成改变了TSN的信息汇总的选举方式，感觉虽然是对temporal relation的一个研究，但结构简单，只限于每帧过完CNN后的feature以及选择MLP的结构做为关系的联接，这个方向还有很大的空间。
+
+2. 评论:
+可以扩展到其他任务中的长时间记忆保持。
+
+#### 通用检测
+
+#### 异常行为检测
+
+#### Pose 相关
+
 
 #### Human parsing
 

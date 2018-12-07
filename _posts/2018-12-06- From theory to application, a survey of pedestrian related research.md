@@ -188,10 +188,10 @@ tags:
 比较小的方向，但是可以用到很多高级方法。最近的论文都是伴随新的数据集形式出现的。
 
 #### Pose 相关
-
+参见workshop和[CVPR2018 人体姿态相关](http://www.cvmart.net/community/article/detail/286)
 
 #### Human parsing
-
+参见workshop
 
 #### Video based re-id and MOT
 

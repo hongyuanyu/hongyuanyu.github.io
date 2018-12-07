@@ -19,7 +19,9 @@ tags:
 
 1. [Compressed Video Action Recognition](https://arxiv.org/pdf/1712.00636.pdf) (CVPR 2018 spotlight)
 
-![Compressed_Video](https://i.postimg.cc/ncB9NQ99/compress-video.png = 1000x600)
+<img src="https://i.postimg.cc/ncB9NQ99/compress-video.png" width="1000" hegiht="600" align=center />
+
+<!-- ![Compressed_Video](https://i.postimg.cc/ncB9NQ99/compress-video.png = 1000x600) -->
 
 * 简介: 
 训练强大的深度视频表示比学习深度图像表示更具挑战性。主要是因为视频流中高度的时间和空间冗余，真正有价值的信息往往被巨大的冗余信息所覆盖。使用H.264，HEVC等压缩编码方式可以最多将数据量减少两个数量级，因此本文直接在压缩视频上训练深度网络。

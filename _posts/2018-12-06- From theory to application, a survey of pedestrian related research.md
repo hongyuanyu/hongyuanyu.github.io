@@ -123,8 +123,8 @@ tags:
 可以扩展到其他任务中的长时间记忆保持。文章做法可以简单的理解成改变了TSN的信息汇总的选举方式，感觉虽然是对temporal relation的一个研究，但结构简单，只限于每帧过完CNN后的feature以及选择MLP的结构做为关系的联接，这个方向还有很大的空间。
 
 
-#### 通用检测
-##### [Fully Motion-Aware Network for Video Object Detection(http://openaccess.thecvf.com/content_ECCV_2018/papers/Shiyao_Wang_Fully_Motion-Aware_Network_ECCV_2018_paper.pdf) (ECCV 2018)
+#### 检测
+##### [Fully Motion-Aware Network for Video Object Detection](http://openaccess.thecvf.com/content_ECCV_2018/papers/Shiyao_Wang_Fully_Motion-Aware_Network_ECCV_2018_paper.pdf) (ECCV 2018)
 
 [![MANET.png](https://i.postimg.cc/YCzjQbR2/MANET.png)](https://postimg.cc/K14Z27CC)
 1. 简介:

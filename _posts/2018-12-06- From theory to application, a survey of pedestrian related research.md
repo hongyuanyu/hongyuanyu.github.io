@@ -15,30 +15,46 @@ tags:
 
 ### Theory about video
 
-#### 视频数据形式与视频数据的建模
+#### 视频数据形式
 
 ##### [Compressed Video Action Recognition](https://arxiv.org/pdf/1712.00636.pdf) (CVPR 2018 spotlight)
 
-<!--<img src="https://i.postimg.cc/ncB9NQ99/compress-video.png" width="100%" hegiht="100%" align=center /> -->
-
-![](https://i.postimg.cc/ncB9NQ99/compress-video.png)
-
-* 简介: 
+[![compress-video.png](https://i.postimg.cc/ncB9NQ99/compress-video.png)](https://postimg.cc/GH3pytQb)
+1. 简介: 
 训练强大的深度视频表示比学习深度图像表示更具挑战性。主要是因为视频流中高度的时间和空间冗余，真正有价值的信息往往被巨大的冗余信息所覆盖。使用H.264，HEVC等压缩编码方式可以最多将数据量减少两个数量级，因此本文直接在压缩视频上训练深度网络。
-* 启发:
+2. 启发:
 其实之前也发现了这个问题，在使用视频数据训练的时候，先把视频拆帧再读入连续帧图片，拆帧就是一个解码的过程，不会带来任何信息收益，但是数据量一下子由本来的几十M变成上G的数据。而且在训练的时候往往由于数据量过大，视频的batch大小非常有限，训练速度也很慢。之前请教过师兄可不可以用来做跟踪，师兄说这个方法可能不适用于在线视频。在又调研一些文献后发现视频监控的在线视频也是要压缩的，只是没有了B帧，压缩尺度没有离线的那么大。流程如下:
-
 [![dvr.png](https://i.postimg.cc/pVZKdjLN/dvr.png)](https://postimg.cc/z3yytVhp)
-
 具体而言:
 * 针对这种压缩数据流设计高效视频检测跟踪网络，由于数据量减小，信息量不变。因此可以把batch做得很大，理论上更加高效。
 * 反过来，在做视频超分和视频生成的时候可以生成有压缩的视频，再进一步还原。
+
+#### 视频卷积核等特征提取器
+
+##### [MiCT: Mixed 3D/2D Convolutional Tube for Human Action Recognition](http://openaccess.thecvf.com/content_cvpr_2018/papers/Zhou_MiCT_Mixed_3D2D_CVPR_2018_paper.pdf) (CVPR 2018)
+
+[![mict.png](https://i.postimg.cc/KjWTydnZ/mict.png)](https://postimg.cc/8fhcRXK3)
+[![mitc-net.png](https://i.postimg.cc/yYJ9T8HW/mitc-net.png)](https://postimg.cc/ppHpWxyt)
+1. 简介:
+视频中的人为动作是三维（3D）信号。最近的尝试使用3D卷积神经网络（CNN）来探索用于人类动作识别的时空信息。虽然很有前景，但3D CNN在这项任务方面并没有取得高性能，因为它们在静止图像中用于视觉识别的完善的二维（2D）对应物。文章认为，时空融合的高度训练复杂性和3D卷积的巨大内存成本阻碍了当前3D CNN，通过输出对于高级任务至关重要的更深层特征图，逐层堆叠3D卷积。因此，文章提出了一种混合卷积（MiCT），它将2D CNN与3D卷积模块相结合，以生成更深入，更丰富的信息特征图，同时降低每轮时空融合的训练复杂性。基于MiCT，还提出了一种新的端到端可训练深度3D网络MiCTNet，以更好地探索人类行为中的时空信息。对三个着名的基准数据集（UCF101，Sport1M和HMDB-51）的评估表明，所提出的MiCT-Net显着优于原始的3D CNN。与UCF101和HMDB51上最先进的动作识别方法相比，文章的MiCT-Net产生了最佳性能。
+2. 启发
+
+##### [Trajectory Convolution for Action Recognition](https://papers.nips.cc/paper/7489-trajectory-convolution-for-action-recognition) (NIPS 2018)
+
+[![Trajectory-Convolution.png](https://i.postimg.cc/NfWXCvsD/Trajectory-Convolution.png)](https://postimg.cc/QHJVVPWK)
+1. 简介:
+如何利用时间维度是视频分析中的一个主要问题。目前主要方法是将3D卷积分解为分别用于空间的单独分量和时间卷积。然而，时间卷积带有一个
+隐式假设，即跨时间步长的特征映射能很好地对齐，以便可以聚合相同位置特征。这个假设可以在实际应用中过于强大，特别是在运动识别方面。
+运动是一个至关重要的线索。在这项工作中，提出了一个新的CNN架构TrajectoryNet，包含轨迹卷积，一种新的操作沿时间维度整合特征，以替换现有的时间
+卷积。此操作明确考虑了内容的更改由变形或运动引起，可以沿着运动路径聚合视觉特征。
+2. 启发:
+其实是可变形卷积的三维扩展。
 
 
 
 #### 视频模式下的注意力机制
 
-#### 视频卷积核等特征提取器
+
 
 #### 视频网络结构
 

@@ -193,21 +193,27 @@ tags:
 #### Human parsing
 
 
-#### Video based re-id (MARS)
-1. dataset MARS(2016)
-2. Tracklets matching
-3. shortcome: far from practical application
-4. 改进方向:
+#### Video based re-id and MOT
+
+##### dataset MARS(2016)
+1. Tracklets matching
+2. shortcome: far from practical application
+3. 改进方向:
  * 视频模式下可以考虑人脸步态等信息， 但是目前的视频数据集不够支持。
  * 使用注意力机制，关注到part， [Deeply-Learned Part-Aligned Representations for Person Re-Identification](https://arxiv.org/pdf/1707.07256.pdf)
  * Pose guided 
 
-#### MOT (MTMC)
-1. 论文： [Features for Multi-Target Multi-Camera Tracking and Re-Identification](https://arxiv.org/pdf/1803.10859.pdf)
-2. 方法简介:
-3. 不足:
-4. 可能的改进:
+##### [Features for Multi-Target Multi-Camera Tracking and Re-Identification](https://arxiv.org/pdf/1803.10859.pdf) (CVPR 2018)
 
+[![MOT1.png](https://i.postimg.cc/SR0bjbwZ/MOT1.png)](https://postimg.cc/VrFVHpsM)
+1. 方法简介:
+多目标多相机跟踪（MTMCT）通过从多个相机拍摄的视频跟踪许多人。人员重新识别（Re-ID）从图库中检索与人查询图像类似的人的图像。我们通过卷积神经网络学习MTMCT和Re-ID的良好特征。我们的贡献包括用于训练的自适应加权三元组丢失和用于硬标识挖掘的新技术。
+
+2. 评论: 
+这也是一个离线的方法，用聚类做reid。
+
+##### 总结
+视频里的reid，跟踪可以可以拓展为,目标发现(spotting),根据一个目标的照片实时跟踪整个目标并且分析其行为。
 
 
 ### Recent competetion about human

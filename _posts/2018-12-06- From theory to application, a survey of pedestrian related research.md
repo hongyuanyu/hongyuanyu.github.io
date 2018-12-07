@@ -19,7 +19,7 @@ tags:
 
 1. [Compressed Video Action Recognition](https://arxiv.org/pdf/1712.00636.pdf) (CVPR 2018 spotlight)
 
-<img src="https://i.postimg.cc/ncB9NQ99/compress-video.png" width="1000" hegiht="600" align=center />
+<img src="https://i.postimg.cc/ncB9NQ99/compress-video.png" width="100%" hegiht="100%" align=center />
 
 <!-- ![Compressed_Video](https://i.postimg.cc/ncB9NQ99/compress-video.png = 1000x600) -->
 

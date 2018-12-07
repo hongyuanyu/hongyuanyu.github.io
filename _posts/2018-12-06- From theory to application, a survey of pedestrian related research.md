@@ -95,6 +95,17 @@ tags:
 
 2. 评论: 序列降维方法，相关方法可以关注下。
 
+#### 其他
+##### [A VARIATIONAL U-NET FOR CONDITIONAL APPEARANCE AND SHAPE GENERATION](https://arxiv.org/pdf/1804.04694.pdf)(CVPR 2018)
+
+[![VAE-UNET.png](https://i.postimg.cc/8PbZ9VPh/VAE-UNET.png)](https://postimg.cc/JGG3HvXn)
+1. 简介:
+深度生成模型在图像合成领域展现了优异的性能。然而，由于它们是直接生成目标的图像，而没有对其本质形状和外观之间的复杂相互影响进行建模，所以在空间转换时就会存在性能退化。我们针对形状指导图像生成提出了条件 U-Net，将变分自编码器输出的外观条件化。这个方法在图像数据集上进行端到端的训练，不需要同一个物体在不同的姿态或者外观下的采样。实验证明，这个模型能够完成条件图像生成和转换。所以，查询图像的外观或者形状能够被保留，同时能够自由地改变未被保留的另一个。此外，在保留形状的时候，由于外观的随机潜在表征，它可以被采样。
+
+2. 评价:
+模型比较有意思，可以考虑扩展到其他任务中。论文写得好，后面仔细学习下写作。
+
+
 ### Application
 
 #### 行为识别
@@ -113,13 +124,74 @@ tags:
 
 
 #### 通用检测
+##### [Fully Motion-Aware Network for Video Object Detection(http://openaccess.thecvf.com/content_ECCV_2018/papers/Shiyao_Wang_Fully_Motion-Aware_Network_ECCV_2018_paper.pdf) (ECCV 2018)
+
+[![MANET.png](https://i.postimg.cc/YCzjQbR2/MANET.png)](https://postimg.cc/K14Z27CC)
+1. 简介:
+视频物体检测中当某些帧突然恶化会很影响检测结果。典型的解决方案之一是通过聚合相邻帧来增强每帧特征。由于物体和相机的运动，物体的特征通常不是空间校准的。本文提出了一种称为全动态感知网络（MANet）的端到端模型，它在统一的框架中实现像素级和实例级对象的特征校准。像素级校准在建模详细运动时非常灵活，而实例级校准可捕获更多全局运动提示，以便对遮挡具有鲁棒性。
+
+2. 评论: 这篇也是视频中特征校准，因为视频变化剧烈，所以特征很容易对不齐，可变性3D卷积核也是做这个的。
+
+##### 启发
+视频中的landmark感觉可以做一下，视频校准很有必要。可以建个数据集再做个baseline方法。
 
 #### 异常行为检测
+
+##### [Joint Detection and Recounting of Abnormal Events by Learning Deep Generic Knowledge](https://arxiv.org/pdf/1709.09121.pdf) (ICCV 2017)
+
+[![ab1.png](https://i.postimg.cc/pVj0RFkY/ab1.png)](https://postimg.cc/Dm2Qcm98)
+1. 简介:
+本文讨论了联合检测和重新计算视频中异常事件的问题。重述异常事件，即解释为什么它们被判断为异常，是视频监控中尚未探索但至关重要的任务，因为它有助于人类观察者快速判断它们是否是误报警。为了以事件叙述的人类可理解的形式描述事件，学习关于视觉概念（例如，对象和动作）的一般知识是至关重要的。尽管卷积神经网络（CNN）已经在学习中获得了有希望的结果，但对于如何有效地使用CNN进行异常事件检测，这仍然是一个悬而未决的问题，主要是由于异常检测的环境依赖性。 在本文中，我们通过集成通用CNN模型和环境相关的异常检测器来解决这个问题。我们的方法首先学习具有多个视觉任务的CNN，以利用对于检测和重述异常事件有用的语义信息。通过将模型适当地插入异常探测器，我们可以检测并重新计数
+在利用CNN的判别力的同时发生异常事件。
+
+2. 评价:
+异常行为可解释下，也就是学习目标和环境物体之间的关系来发现异常。但是这是基于单帧图片的，视频模式下的关系建立可以探索一下。
+
+##### [A Revisit of Sparse Coding Based Anomaly Detectionin Stacked RNN Framework](http://openaccess.thecvf.com/content_ICCV_2017/papers/Luo_A_Revisit_of_ICCV_2017_paper.pdf) (ICCV 2017)
+
+[![ab2.png](https://i.postimg.cc/QMn6xgRS/ab2.png)](https://postimg.cc/4KVvWc4h)
+1. 简介: 
+受基于稀疏编码的异常检测能力的启发，我们提出了一种时间相干性
+我们强制执行类似相邻帧的稀疏编码（TSC）用相似的重建系数编码。然后我们用特殊类型的堆叠递归神经网络（sRNN）映射TSC。通过利用sRNN同时学习所有参数，可以避免对TSC的非平凡超参数选择，同时利用浅sRNN，可以在正向通道内推断重构系数，这降低了学习稀疏系数的计算成本。本文的贡献有两方面：i）我们提出了一个TSC，它可以映射到sRNN，这有助于参数优化并加速 异常预测。 ii）我们构建了一个非常大的数据集，该数据集甚至比根据数据量和场景多样性的异常检测的所有现有数据集的总和还要大。
+
+2. 评价:
+魔改RNN,稀疏编码加提出新的数据集。
+
+##### [Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Marker Discovery](https://arxiv.org/pdf/1703.05921.pdf) (IPMI 2017)
+
+[![ab3.png](https://i.postimg.cc/Ss2gX244/ab3.png)](https://postimg.cc/5YJBTtjK)
+1. 简介:
+获得捕获与疾病进展和治疗监测相关的成像标志物的模型是具有挑战性的。模型通常基于大量数据，带有注释的已知标记示例，旨在自动检测。高注释努力和对已知标记词汇的限制限制了这种方法的力量。在这里，我们进行无监督学习，以识别成像数据中的异常作为标记的候选者。我们提出AnoGAN，一个深度卷积生成对抗网络 学习一系列正常的解剖变异性，伴随着一种新的异常评分方案，该方案基于从图像空间到潜在空间的映射。应用于新数据，模型标记异常，并对图像补丁进行评分，表明它们适合学习的分布。视网膜光学相干断层扫描图像的结果表明该方法正确识别异常图像，例如含有视网膜液或高反射灶的图像。
+
+2. 评价:
+用GAN做医学疾病诊断，DCGAN的简单改进，效果没有很好。
+
+##### [Future Frame Prediction for Anomaly Detection – A New Baseline](https://arxiv.org/pdf/1712.09867.pdf) (CVPR 2018)
+
+[![ab4.png](https://i.postimg.cc/Bb2Ngrtw/ab4.png)](https://postimg.cc/hQP943L9)
+1. 简介:
+视频中的异常检测是指识别不符合预期行为的事件。然而，几乎所有现有方法都通过最小化训练数据的重建误差来解决该问题，这不能保证异常事件的较大重建误差。在本文中，我们建议在视频预测框架内解决异常检测问题。据我们所知，这是第一项利用预测的未来框架与其基本事实之间的差异来检测异常事件的工作。为了预测正常事件的质量更高的未来帧，除了对强度和梯度的常用外观（空间）约束之外，我们还通过强制预测帧和地面实况之间的光流来在视频预测中引入运动（时间）约束。帧是一致的，这是第一个将时间约束引入视频预测任务的工作。这种空间和运动约束有助于未来正常事件的帧预测，并因此有助于识别那些不符合期望的异常事件。对玩具数据集和一些公开可用数据集的广泛实验验证了我们的方法在对正常事件中的不确定性的稳健性和对异常事件的敏感性方面的有效性。
+
+2. 评价:
+预测下一帧来发现异常，仅仅一帧应该不够的。
+
+##### [Real-world Anomaly Detection in Surveillance Videos]() (CVPR 2018)
+
+[![ab5.png](https://i.postimg.cc/mDv87LZH/ab5.png)](https://postimg.cc/bDRxhjty)
+1. 简介:
+监控视频能够捕获各种逼真的异常情况。在本文中，我们建议通过利用正常和异常视频来学习异常。为了避免注释反常段或剪辑培训视频，这是非常耗时的，我们提出通过深多个实例异常学会利用弱标记的训练视频排名框架，即培训标签（异常或正常）是在video-级别而不是剪辑级别。在我们的方法中，我们将正常和异常视频视为包和视频片段作为多实例学习（MIL）中的实例，并自动学习深度异常排名模型，该模型预测异常视频片段的高异常分数。此外，我们在排名损失函数中引入稀疏性和时间平滑性约束，以更好地定位训练期间的异常。我们还推出了一个新的大规模的第一个128小时视频数据集。它包括1900个长而未经修剪的现实监控视频，包括13个现实异常现象，如战斗，交通事故，入室盗窃，抢劫等，以及正常活动。此数据集可用于两个任务。首先，考虑一组中的所有异常和另一组中的所有正常活动的一般异常检测。第二，识别13个异常活动中的每一个。我们的实验结果表明，与最先进的方法相比，我们的MIL异常检测方法在异常检测性能方面取得了显着的进步。我们提供了最近几个关于异常活动识别的深度学习基线的结果。这些基线的低识别性能表明我们的数据集非常具有挑战性，并为未来的工作开辟了更多的机会。
+
+2. 评价:
+弱监督标注数据集，但是方法居然不是在线处理而是划分视频片段。
+
+##### 总结
+比较小的方向，但是可以用到很多高级方法。最近的论文都是伴随新的数据集形式出现的。
 
 #### Pose 相关
 
 
 #### Human parsing
+
 
 #### Video based re-id (MARS)
 1. dataset MARS(2016)
@@ -130,7 +202,7 @@ tags:
  * 使用注意力机制，关注到part， [Deeply-Learned Part-Aligned Representations for Person Re-Identification](https://arxiv.org/pdf/1707.07256.pdf)
  * Pose guided 
 
-#### Video based re-id (MTMC)
+#### MOT (MTMC)
 1. 论文： [Features for Multi-Target Multi-Camera Tracking and Re-Identification](https://arxiv.org/pdf/1803.10859.pdf)
 2. 方法简介:
 3. 不足:

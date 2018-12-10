@@ -65,6 +65,7 @@ ssserver -c /etc/shadowsocks.json -d start
 ```
 ssserver -c /etc/shadowsocks.json -d stop
 ```
+11. ip被封解决方案: [https://www.bwgyhw.com/bandwagonhost-change-ip-free/](https://www.bwgyhw.com/bandwagonhost-change-ip-free/)
 
 #### 客户端配置
 

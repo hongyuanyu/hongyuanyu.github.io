@@ -1,10 +1,10 @@
 # Site settings
-title: Welcome to Hongyuan Yu's Blog
+title: Welcome!
 SEOTitle: 俞宏远的博客 | Hongyuan Blog
 header-img: img/homepage_3.jpg
 email: hongyuan.yu@cripac.ia.ac.cn
-description: "When natural inclination develops into a passionate desire, one advances towards his goal in seven-league boots."
-keyword: "Hongyuan, Blog, ML, CV, PHD"
+# description: "When natural inclination develops into a passionate desire, one advances towards his goal in seven-league boots."
+keyword: "Hongyuan, Blog, ML, CV"
 url: "http://hongyuan.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/hongyuanyu/hongyuanyu.github.io.git" # you code repository

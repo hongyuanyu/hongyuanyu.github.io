@@ -1,6 +1,5 @@
 ---
 layout: page
-description: "When natural inclination develops into a passionate desire, one advances towards his goal in seven-league boots."
 ---
 
 {% for post in paginator.posts %}
@@ -19,7 +18,7 @@ description: "When natural inclination develops into a passionate desire, one ad
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%H %-d, %Y" }}
     </p>
 </div>
 <hr>

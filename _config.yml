@@ -1,8 +1,8 @@
 # Site settings
-title: YHY
+title: Hongyuan Yu
 SEOTitle: 俞宏远的博客 | Hongyuan Blog
 header-img: img/homepage_4.jpg
-email: hongyuan.yu@cripac.ia.ac.cn
+email: yuhyuan1995@gmail.com
 # description: "When natural inclination develops into a passionate desire, one advances towards his goal in seven-league boots."
 keyword: "Hongyuan, Blog, ML, CV"
 url: "http://hongyuan.github.io"          # your host, for absolute URL
@@ -23,7 +23,7 @@ RSS: false
 github_username:    hongyuanyu
 #facebook_username:  baiying.qiu.7
 jianshu_username:   Arti_Silly
-#twitter_username:   qiubaiying
+twitter_username:   GoGo61716923
 
 
 
@@ -100,8 +100,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Lihong Pi",
-        href: "THU"
+        title: "Hongyuan Yu",
+        href: "CASIA"
     },{
         title: "简书·Arti_Silly",
         href: "https://www.jianshu.com/u/0f0fd65df64a"
